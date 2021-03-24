@@ -3,14 +3,17 @@ import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";  
+import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import LeftNav from './LeftNav';
+import LeftNav from "./LeftNav";
 import TopBar from "./TopBar";
-const drawerWidth = 240;
+import UnauthRoutes from "./UnauthRoutes";
+import RightNav from "./RightNav";
+import { Grid } from "@material-ui/core";
+const drawerWidth = 210;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-  
 }));
 
 function ResponsiveDrawer(props) {
@@ -59,7 +61,7 @@ function ResponsiveDrawer(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <div className={`${classes.root} bg-darkblue `} >
+    <div className={`${classes.root} bg-darkblue `}>
       <AppBar position="fixed" className={`${classes.appBar} bg-darkblue`}>
         <Toolbar>
           <IconButton
@@ -70,7 +72,7 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <TopBar/>
+          <TopBar />
         </Toolbar>
       </AppBar>
       <nav className={`${classes.drawer}`} aria-label="mailbox folders">
@@ -84,8 +86,7 @@ function ResponsiveDrawer(props) {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-          <LeftNav/>
-
+            <LeftNav />
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -97,12 +98,16 @@ function ResponsiveDrawer(props) {
             variant="permanent"
             open
           >
-          <LeftNav/>
+            <LeftNav />
           </Drawer>
         </Hidden>
       </nav>
       <main className={classes.content}>
-        <div className={classes.toolbar} />
+        <Grid container className="bg-info">
+          <Grid item sm={9} className="bg-success">
+            <UnauthRoutes />
+          </Grid>
+        </Grid>
       </main>
     </div>
   );

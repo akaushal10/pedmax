@@ -8,7 +8,9 @@ const LeftNav = () => {
   return (
     <>
       <div className="bg-darkblue p-2">
-        <img src="https://www.pedmax.com/images/logo.svg" />
+      <div className="text-center">
+      <img src="https://www.pedmax.com/images/logo.svg"/>
+      </div>
         <div>
           <p className="my-2 text-orange bolder-text">Favorites</p>
           <div

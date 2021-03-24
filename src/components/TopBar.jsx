@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
 import MailIcon from "@material-ui/icons/Mail";
+import { Link } from "react-router-dom";
 const TopBar = () => {
   return (
     <>
@@ -20,13 +21,25 @@ const TopBar = () => {
           className="text-left"
         >
           <Grid item>
-            <Button startIcon={<MailIcon />}>Home</Button>
+            <Link to="" className="text-decoration-none">
+              <Button startIcon={<MailIcon />} className="text-white">
+                Home
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button startIcon={<MailIcon />}>Sparts</Button>
+            <Link to="sports/" className="text-decoration-none">
+              <Button startIcon={<MailIcon />} className="text-white">
+                Sports
+              </Button>
+            </Link>
           </Grid>
           <Grid item>
-            <Button startIcon={<MailIcon />}>Live Bats</Button>
+          <Link to="live-bets/" className="text-decoration-none">
+            <Button startIcon={<MailIcon />} className="text-white">
+              Live Bats
+            </Button>
+          </Link>
           </Grid>
         </Grid>
         <Grid
@@ -39,10 +52,24 @@ const TopBar = () => {
           className="text-left"
         >
           <Grid item>
-            <Button>Login</Button>
+            <Link
+              to="login/"
+              component={Button}
+              style={{ backgroundColor: "#1d6373" }}
+              className="mx-2 small btn-login text-white"
+            >
+              Login
+            </Link>
+            {/* <Button></Button> */}
           </Grid>
           <Grid item>
-            <Button>Register</Button>
+            <Link
+              to="login/"
+              component={Button}
+              className="bg-orange text-white mx-2"
+            >
+              Register
+            </Link>
           </Grid>
         </Grid>
       </Grid>

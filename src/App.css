@@ -7,6 +7,9 @@ body{
 .text-orange{
   color:#fd7657 !important;
 }
+.bg-orange{
+  background-color:#fd7657 !important;
+}
 .bolder-text{
   font-weight: 650 !important;
 }
