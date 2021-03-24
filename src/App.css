@@ -1,0 +1,18 @@
+body{
+  background-color: #282837 !important;
+}
+.bg-darkblue{
+  background-color: #282837 !important;
+}
+.text-orange{
+  color:#fd7657 !important;
+}
+.bolder-text{
+  font-weight: 650 !important;
+}
+.bg-lightpurple{
+  background-color: rgba(255, 255, 255, 0.068) !important;
+}
+.rounded-corners{
+  border-radius: 5px !important;
+}
